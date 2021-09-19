@@ -1,0 +1,422 @@
+/*-- CSS RESET--*/
+/* Box sizing rules */
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol li[class] {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Make images easier to work with */
+
+img {
+  max-width: 100%;
+}
+
+/*--CSS RESET END--*/
+/*--BACKGROUND--*/
+main {
+  min-height: 100vh;
+  background: url("Imagenes/Daredevil.jpg");
+  background-color: black;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/*--BACKGROUND - FAV--*/
+#fav {
+  min-height: 100vh;
+  background: url("Imagenes/flash\ black.jpg");
+  background-color: black;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/*--BUSCADOR--*/
+#contenedorPrincipalFav {
+  display: none;
+}
+
+#search {
+  width: 60%;
+  margin: auto;
+}
+#buscador {
+  width: 60%;
+  height: 2.5em;
+  margin: 3em auto;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 26px;
+  box-shadow: 10px 10px 30px rgb(0, 0, 0);
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: darkcyan;
+  position: relative;
+}
+
+
+input:focus {
+  outline: none;
+}
+
+#cargarHeroes {
+  font-size: 1.8em;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 1s;
+  color: rgb(150, 150, 150);
+  position: absolute;
+  left: 870;
+  top: 68;
+}
+
+#cargarHeroes:hover {
+  transform: scale(1.06, 1.06);
+  color: #8e0e00; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*--CARD SUPER--*/
+
+#contSup {
+  margin: auto;
+  width: 80%;
+}
+#contSupFav {
+  margin: auto;
+  width: 80%;
+}
+
+.card {
+  background-color: rgba(32, 32, 32, 0);
+}
+
+#card6 {
+  padding-top: 1em;
+  border-radius: 10px;
+  background-color: rgba(32, 32, 32, 0.9);
+  color: white;
+  margin: auto;
+  margin-bottom: 1em;
+  height: 580px;
+}
+
+#namePlace {
+  text-align: center;
+}
+
+#imagen {
+  border-radius: 18px;
+  border: 1px solid rgb(153, 153, 153);
+  width: 40%;
+}
+
+#biografia {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-left: 2em;
+}
+span {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#favDiv {
+  text-align: center;
+}
+#buttonFav {
+  width: 3.5em;
+  height: 2.4em;
+  text-align: center;
+  color: white;
+  background: #8e0e00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: solid grey 1px;
+  border-radius: 10px;
+  margin: 1em;
+  transition: all 0.5s;
+}
+#buttonFav:hover {
+  transform: scale(1.08, 1.08);
+  color: black;
+  border: solid black 1px;
+}
+#buttonFavMain {
+  width: 6%;
+  height: 5%;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+
+  border: solid grey 1px;
+  border-radius: 10px;
+  margin: 0.5em;
+  transition: all 1s;
+  padding: 0.6em;
+  background: #8e0e00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1f1c18,
+    #8e0e00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#buttonFavMain:hover {
+  transform: scale(1.08, 1.08);
+  color: rgb(90, 87, 87);
+  border: solid rgb(90, 87, 87) 1px;
+  transition: all 1s;
+}
+
+#space {
+  height: 4em;
+}
+
+/*--media query que utiliza bootstrap por defecto--*/
+
+@media screen and (max-width: 374px) {
+  #buscador {
+    width: 100%;
+  }
+
+  #cargarHeroes {
+    font-size: 1.4em;
+    left: 250;
+    top: 70;
+  }
+  #card6 {
+    height: auto;
+  }
+
+  #namePlace {
+    font-size: 1.03em;
+  }
+  #biografia {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.9em;
+  }
+  span {
+    font-size: 0.8em;
+  }
+  #buttonFav {
+    left: 200;
+  }
+  
+}
+
+@media screen and (min-width: 375px) and (max-width: 410px) {
+  #buscador {
+    width: 100%;
+  }
+
+  #cargarHeroes {
+    font-size: 1.4em;
+    left: 260;
+    top: 70;
+  }
+  #card6 {
+    height: auto;
+  }
+  #namePlace {
+    font-size: 1.05em;
+  }
+  #biografia {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+  span {
+    font-size: 0.6em;
+  }
+  #buttonFav {
+    left: 198;
+  }
+ 
+}
+
+@media (min-width: 411px) and (max-width: 575px) {
+  #buscador {
+    width: 100%;
+  }
+
+  #cargarHeroes {
+    font-size: 1.4em;
+    left: 290;
+    top: 70;
+  }
+
+  #card6 {
+    height: auto;
+  }
+  #namePlace {
+    font-size: 1.05em;
+  }
+  #biografia {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+  span {
+    font-size: 0.8em;
+  }
+  #buttonFav {
+    left: 240;
+  }
+  #buttonFavMain {
+    width: 12%;
+    height: 6%;
+  }
+}
+@media (min-width: 576px) {
+}
+
+@media screen and (min-width: 760px) {
+  #buscador {
+    width: 100%;
+  }
+
+  #cargarHeroes {
+    font-size: 1.4em;
+    left: 570;
+    top: 70;
+  }
+  #card6 {
+    height: 460px;
+  }
+
+  #datos {
+    font-size: 1em;
+  }
+  #buttonFav {
+    left: 210;
+    
+  }
+  
+}
+
+@media (min-width: 992px) {
+  #datos {
+    font-size: 1.3em;
+  }
+
+  #cargarHeroes {
+    font-size: 1.4em;
+    left: 770;
+    top:70;
+  }
+  #card6 {
+    height: 550px;
+  }
+  #buttonFav {
+    top: 0;
+    left: 210;
+  }
+ 
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1379px) {
+  #buscador {
+    width: 80%;
+  }
+
+  #cargarHeroes {
+    font-size: 1.4em;
+    left: 958;
+    top: 72;
+  }
+  #card6 {
+    height: 540px;
+  }
+  
+}
+
+@media screen and (min-width: 1380px) and (max-width: 1920px) {
+  #buscador {
+    width: 60%;
+    height: 3em;
+  }
+
+  #cargarHeroes {
+    left: 990;
+    top: 72;
+    font-size: 1.8em;
+  }
+  #card6 {
+    height: 560px;
+  }
+
+  
+
+
+}
