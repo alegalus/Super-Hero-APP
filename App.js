@@ -127,7 +127,7 @@ async function clickBoton() {
     fav.id = "buttonFav";
     divFav.appendChild(fav);
     let star = document.createElement("i");
-    star.className = "far fa-star";
+    star.className = "fas fa-arrows-alt-h";
     fav.appendChild(star);
 
     //Primera Aparicion
