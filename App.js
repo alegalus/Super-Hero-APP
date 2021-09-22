@@ -2,7 +2,7 @@ window.onload = iniciar;
 
 function iniciar() {
   let button = document.getElementById("cargarHeroes");
-  button.addEventListener("click", clickBoton);
+  button.addEventListener("click", clickJson);
 }
 
 async function cargarUrl(url) {
@@ -10,16 +10,19 @@ async function cargarUrl(url) {
   return response.json();
 }
 
-async function clickBoton() {
+async function clickJson() {
   let nombre = document.getElementById("buscador").value;
 
   const accesToken = "108611408143224";
   let json = await cargarUrl(
     `https://www.superheroapi.com/api.php/${accesToken}/search/${nombre}`
-  );
-
-  /*--Traer los datos de la Api--*/
+  ); /*--Traer los datos de la Api--*/
   console.log(json);
+  createCard(json);
+  modalErr(json);
+}
+
+function createCard(json) {
   let datos = json.results;
   let padre = document.getElementById("fila");
   for (let item in datos) {
@@ -60,7 +63,6 @@ async function clickBoton() {
     spanTit.id = "namePlace";
     spanTit.innerHTML = name;
     tituloEnc.appendChild(spanTit);
-
     let br = document.createElement("br");
     divEnc.appendChild(br);
     //Agregando imagen
@@ -73,7 +75,6 @@ async function clickBoton() {
     divEnc.appendChild(imgSup);
     //Seccion de biografia
     let bio = datos[item].biography;
-
     let divBio = document.createElement("div");
     divBio.className = "card-body";
     divBio.id = "datos";
@@ -119,7 +120,7 @@ async function clickBoton() {
     spanEdit.id = "editorial";
     spanEdit.innerHTML = editorial;
     parrEdit.appendChild(spanEdit);
-    //boton de favoritos
+    //boton de giro de tarjeta
     let divFav = document.createElement("div");
     divFav.id = "favDiv";
     divCard.appendChild(divFav);
@@ -129,22 +130,9 @@ async function clickBoton() {
     let star = document.createElement("i");
     star.className = "fas fa-arrows-alt-h";
     fav.appendChild(star);
-
-    //Primera Aparicion
-    /*let aparicion = bio["first-appearance"];
-    let parrApa = document.createElement("p");
-    parrApa.className = "card-text";
-    parrApa.id = "parrafo";
-    parrApa.textContent = "Primera Aparicion: ";
-    divBio.appendChild(parrApa);
-    let spanApa = document.createElement("span");
-    spanApa.className = "primeraApa";
-    spanApa.id = "primeraApa";
-    spanApa.innerHTML = aparicion;
-    parrApa.appendChild(spanApa);*/
   }
 
-  let padreFav = document.getElementById("filaFav");
+  /*let padreFav = document.getElementById("filaFav");
   let buttonFav = document.getElementById("buttonFav");
   buttonFav.addEventListener("click", () => {
     console.log("cargando a favoritos")
@@ -175,7 +163,7 @@ async function clickBoton() {
       imgSupFav.setAttribute("src", imagenFav);
       divEncFav.appendChild(imgSupFav);
     }
-  });
+  });/*
   /*let habilidades = json.results[posicion].powerstats;
 
   let combat = (document.getElementById("combate").innerHTML =
@@ -189,4 +177,10 @@ async function clickBoton() {
     habilidades.speed);
   let fuerza = (document.getElementById("fuerza").innerHTML =
     habilidades.strength);*/
+}
+function modalErr(json) {
+  let notFound = json.response;
+  if (notFound == "error") {
+    alert("PERSONAJE NO ENCONTRADO");
+  }
 }
