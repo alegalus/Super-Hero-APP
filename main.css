@@ -52,7 +52,7 @@ img {
 /*--CSS RESET END--*/
 /*--MODAL--*/
 #errorModal {
-  border-radius: 20px;
+  border-radius: 25px;
   text-align: center;
 }
 
@@ -62,11 +62,13 @@ img {
 
 #modalClose {
   margin: 0.3em;
+ font-size: 0.9em;
 }
 
 #imgModal {
   border-radius: 20px;
   width: 80%;
+  align-items: center;
 }
 
 #emoticon {
