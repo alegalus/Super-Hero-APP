@@ -30,7 +30,7 @@ function modal(json) {
   if (notFound == "error") {
     console.log("el boton anda")
     let myModal = new bootstrap.Modal(document.getElementById('errorModal'))
-    myModal.toggle()
+    myModal.toggle() 
   }
 
 }
