@@ -3,6 +3,7 @@ window.onload = iniciar;
 function iniciar() {
   let button = document.getElementById("cargarHeroes");
   button.addEventListener("click", clickJson);
+  
 }
 
 async function cargarUrl(url) {
@@ -19,7 +20,19 @@ async function clickJson() {
   ); /*--Traer los datos de la Api--*/
   console.log(json);
   createCard(json);
-  modalErr(json);
+  modal(json)
+
+  
+}
+
+function modal(json) {
+  let notFound = json.response;
+  if (notFound == "error") {
+    console.log("el boton anda")
+    let myModal = new bootstrap.Modal(document.getElementById('errorModal'))
+    myModal.toggle()
+  }
+
 }
 
 function createCard(json) {
@@ -178,9 +191,4 @@ function createCard(json) {
   let fuerza = (document.getElementById("fuerza").innerHTML =
     habilidades.strength);*/
 }
-function modalErr(json) {
-  let notFound = json.response;
-  if (notFound == "error") {
-    alert("PERSONAJE NO ENCONTRADO");
-  }
-}
+

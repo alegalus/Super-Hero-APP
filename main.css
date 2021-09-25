@@ -50,6 +50,37 @@ img {
 }
 
 /*--CSS RESET END--*/
+/*--MODAL--*/
+#errorModal {
+  border-radius: 20px;
+  text-align: center;
+ 
+}
+
+#modalConten{
+
+  color: rgb(83, 80, 80, 6);
+}
+
+#modalClose {
+  margin: 0.3em;
+}
+
+#imgModal {
+  border-radius: 20px;
+  width: 80%;
+}
+
+#emoticon{
+  width: 6%;
+}
+
+#modalBody{
+  color: rgb(51, 51, 51);
+
+}
+
+
 /*--BACKGROUND--*/
 main {
   min-height: 100vh;
@@ -91,7 +122,6 @@ main {
   color: darkcyan;
   position: relative;
 }
-
 
 input:focus {
   outline: none;
@@ -268,7 +298,6 @@ span {
   #buttonFav {
     left: 200;
   }
-  
 }
 
 @media screen and (min-width: 375px) and (max-width: 410px) {
@@ -300,7 +329,6 @@ span {
   #buttonFav {
     left: 198;
   }
- 
 }
 
 @media (min-width: 411px) and (max-width: 575px) {
@@ -360,9 +388,7 @@ span {
   }
   #buttonFav {
     left: 210;
-    
   }
-  
 }
 
 @media (min-width: 992px) {
@@ -373,7 +399,7 @@ span {
   #cargarHeroes {
     font-size: 1.4em;
     left: 770;
-    top:70;
+    top: 70;
   }
   #card6 {
     height: 550px;
@@ -382,7 +408,6 @@ span {
     top: 0;
     left: 210;
   }
- 
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1379px) {
@@ -398,7 +423,6 @@ span {
   #card6 {
     height: 540px;
   }
-  
 }
 
 @media screen and (min-width: 1380px) and (max-width: 1920px) {
@@ -415,8 +439,4 @@ span {
   #card6 {
     height: 560px;
   }
-
-  
-
-
 }
