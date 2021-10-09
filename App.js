@@ -3,8 +3,9 @@ window.onload = iniciar;
 function iniciar() {
   let button = document.getElementById("cargarHeroes");
   button.addEventListener("click", clickJson);
-  /*let search = document.getElementById("buscador");
-  search.addEventListener("keyup", clickJson);*/
+  let search = document.getElementById("buscador");
+  search.addEventListener("keyup", clickJson);
+  
   
 }
 
@@ -13,7 +14,7 @@ async function cargarUrl(url) {
   return response.json();
 }
 
-async function clickJson() {
+async function clickJson(e) {
   let nombre = document.getElementById("buscador").value;
   let minNom = nombre.toLowerCase();
 
@@ -21,15 +22,15 @@ async function clickJson() {
   let json = await cargarUrl(
     `https://www.superheroapi.com/api.php/${accesToken}/search/${nombre}`
   ); /*--Traer los datos de la Api--*/
-
+  console.log("presiono la tecla: " + e.key + " cuyo codigo es: " + e.keyCode);
   console.log(json);
   createCard(json, minNom);
-  modal(json)
+  modal(json , e)
 }
 
-function modal(json) {
+function modal(json, e) {
   let notFound = json.response;
-  if (notFound === "error") {
+  if (notFound === "error" && e.keyCode !== 8) {
     console.log("el boton anda");
     let myModal = new bootstrap.Modal(document.getElementById("errorModal"));
     myModal.toggle();
