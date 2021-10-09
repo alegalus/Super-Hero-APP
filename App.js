@@ -3,8 +3,8 @@ window.onload = iniciar;
 function iniciar() {
   let button = document.getElementById("cargarHeroes");
   button.addEventListener("click", clickJson);
-  let search = document.getElementById("buscador");
-  search.addEventListener("keyup", clickJson);
+  /*let search = document.getElementById("buscador");
+  search.addEventListener("keyup", clickJson);*/
   
   
 }
