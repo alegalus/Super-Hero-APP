@@ -3,8 +3,9 @@ window.onload = iniciar;
 function iniciar() {
   let button = document.getElementById("cargarHeroes");
   button.addEventListener("click", clickJson);
-  let search = document.getElementById("search");
-  search.addEventListener("keyup", clickJson);
+  /*let search = document.getElementById("buscador");
+  search.addEventListener("keyup", clickJson);*/
+  
 }
 
 async function cargarUrl(url) {
@@ -23,21 +24,29 @@ async function clickJson() {
 
   console.log(json);
   createCard(json, minNom);
+  modal(json)
+}
+
+function modal(json) {
+  let notFound = json.response;
+  if (notFound === "error") {
+    console.log("el boton anda");
+    let myModal = new bootstrap.Modal(document.getElementById("errorModal"));
+    myModal.toggle();
+  }
+  
 }
 
 function createCard(json, minNom) {
   let datos = json.results;
   let padre = document.getElementById("fila");
   padre.innerHTML = "";
+  
 
   for (let item in datos) {
-    let notFound = json.response;
+    
 
-    if (notFound === "error") {
-      console.log("el boton anda");
-      let myModal = new bootstrap.Modal(document.getElementById("errorModal"));
-      myModal.toggle();
-    }
+    
 
     let main = document.createElement("div");
     //creando los elementos recorriendo los resultados
