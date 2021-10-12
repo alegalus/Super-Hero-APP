@@ -156,11 +156,21 @@ function createCard(json, minNom) {
       console.log("el boton funciona");
       let divHab = document.createElement("div");
       divHab.id = "habilidades";
+      //nombre en habilidades
+      let tituloHab = document.createElement("h2");
+      tituloHab.className = "cardt-tittle";
+      divHab.appendChild(tituloHab);
+      let spanNom = document.createElement("span");
+      spanNom.className = "nombre";
+      spanNom.id = "namePlace";
+      spanNom.innerHTML = name;
+      tituloHab.appendChild(spanNom);
 
       //Mostrando habilidades
       let habilidades = json.results[item].powerstats;
-
       main.appendChild(divHab);
+      let br = document.createElement("br");
+      divEnc.appendChild(br);
       let habSecc = document.createElement("h3");
       habSecc.className = "card-text";
       habSecc.id = "biografia";
