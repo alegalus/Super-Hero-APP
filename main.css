@@ -150,27 +150,46 @@ input:focus {
 }
 /*--CARD SUPER--*/
 
-#contSup {
-  margin: auto;
-  width: 80%;
-}
-#contSupFav {
-  margin: auto;
-  width: 80%;
-}
-
 .card {
   background-color: rgba(32, 32, 32, 0);
 }
 
-#card6 {
+
+#cardFront {
   padding-top: 1em;
   border-radius: 10px;
   background-color: rgba(32, 32, 32, 0.9);
   color: white;
-  margin: auto;
+  margin: 0 1em auto;
   margin-bottom: 1em;
   height: 580px;
+  width: 390px;
+  
+
+}
+
+.card-tittle{
+  margin-bottom: 1em;
+
+}
+
+#cardBack{
+  padding-top: 1em;
+  border-radius: 10px;
+  background-color: rgb(63, 0, 0);
+  color: white;
+  margin: 0 1em auto;
+  margin-bottom: 1em;
+  height: 580px;
+  width: 390px;
+  position:absolute;
+  top: 0;
+  left: 0;
+  
+
+  
+  
+  
 }
 
 #namePlace {
@@ -259,9 +278,7 @@ span {
   height: 4em;
 }
 
-#habilidades {
-  display: none;
-}
+
 
 /*--media query que utiliza bootstrap por defecto--*/
 
@@ -275,9 +292,18 @@ span {
     left: 250;
     top: 70;
   }
-  #card6 {
-    height: auto;
+  #cardFront {
+    height: 440px;
+    width: 280px;
   }
+
+  #cardBack {
+    height: 440px;
+    width: 280px;
+  }
+
+
+ 
 
   #namePlace {
     font-size: 1.03em;
@@ -306,8 +332,14 @@ span {
     left: 260;
     top: 70;
   }
-  #card6 {
-    height: auto;
+  #cardFront {
+    height: 440px;
+    width: 280px;
+  }
+
+  #cardBack {
+    height: 440px;
+    width: 280px;
   }
   #namePlace {
     font-size: 1.05em;
@@ -338,8 +370,14 @@ span {
     top: 70;
   }
 
-  #card6 {
-    height: auto;
+  #cardFront {
+    height: 440px;
+    width: 300px;
+  }
+
+  #cardBack {
+    height: 440px;
+    width: 300px;
   }
   #namePlace {
     font-size: 1.05em;
@@ -375,8 +413,14 @@ span {
     left: 570;
     top: 70;
   }
-  #card6 {
-    height: 460px;
+  #cardFront {
+    height: 520px;
+    width: 340px;
+  }
+
+  #cardBack {
+    height: 520px;
+    width: 340px;
   }
 
   #datos {
@@ -397,8 +441,14 @@ span {
     left: 770;
     top: 70;
   }
-  #card6 {
-    height: 550px;
+  #cardFront {
+    height: 600px;
+    width: 380px;
+  }
+
+  #cardBack {
+    height: 600px;
+    width: 380px;
   }
   #buttonFav {
     top: 0;
@@ -416,8 +466,14 @@ span {
     left: 958;
     top: 72;
   }
-  #card6 {
-    height: 540px;
+  #cardFront {
+    height: 550px;
+    width: 360px;
+  }
+
+  #cardBack {
+    height: 550px;
+    width: 360px;
   }
 }
 

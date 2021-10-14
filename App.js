@@ -42,6 +42,7 @@ function createCard(json, minNom) {
 
   for (let item in datos) {
     let main = document.createElement("div");
+    main.id = "main"
     //creando los elementos recorriendo los resultados
     //creando cards
     if (datos[item].name.indexOf(minNom) !== -1) {
@@ -62,13 +63,13 @@ function createCard(json, minNom) {
       console.log("es mas de un elemento");
     }
     let divCard = document.createElement("div");
-    divCard.id = "card6";
+    divCard.id = "cardSup";
     divCard.className = "card";
     let divEnc = document.createElement("div");
-    divEnc.id = "cardEnc";
+    divEnc.id = "cardFront";
     divEnc.className = "d-flex flex-column align-items-center";
     let tituloEnc = document.createElement("h2");
-    tituloEnc.className = "cardt-tittle";
+    tituloEnc.className = "card-tittle";
 
     padre.appendChild(main); // con esto le doy de quien es hijo cada uno, este va a uno el div card con el div flex
     main.appendChild(divCard);
@@ -83,8 +84,7 @@ function createCard(json, minNom) {
     spanTit.id = "namePlace";
     spanTit.innerHTML = name;
     tituloEnc.appendChild(spanTit);
-    let br = document.createElement("br");
-    divEnc.appendChild(br);
+    
     //Agregando imagen
     let imagen = datos[item].image.url;
     let imgSup = document.createElement("img");
@@ -102,7 +102,7 @@ function createCard(json, minNom) {
     bioSecc.className = "card-text";
     bioSecc.id = "biografia";
     bioSecc.textContent = "Biografia";
-    divCard.appendChild(divBio);
+    divEnc.appendChild(divBio);
     divBio.appendChild(bioSecc);
     //Alter ego
     let alterEgo = bio["full-name"];
@@ -140,10 +140,10 @@ function createCard(json, minNom) {
     spanEdit.id = "editorial";
     spanEdit.innerHTML = editorial;
     parrEdit.appendChild(spanEdit);
-    //boton mustra de habilidades
+    //boton muestra de habilidades
     let divFav = document.createElement("div");
     divFav.id = "favDiv";
-    divCard.appendChild(divFav);
+    divEnc.appendChild(divFav);
     let fav = document.createElement("button");
     fav.id = "buttonFav";
    
@@ -153,9 +153,25 @@ function createCard(json, minNom) {
     fav.appendChild(star);
 
     fav.addEventListener("click", () => {
-      console.log("el boton funciona");
+
       let divHab = document.createElement("div");
-      divHab.id = "habilidades";
+      divHab.id = "cardBack";
+      divCard.appendChild(divHab);
+      if (datos.length == 1) {
+        divHab.className =
+          "col-12 col-md-12 col-xl-12 d-flex flex-column align-items-center";
+        
+        console.log("es un solo elemento");
+      } else if (datos.length == 2) {
+        divHab.className =
+          "col-12 col-md-6 col-xl-6 d-flex flex-column align-items-center";
+        
+      } else {
+        divHab.className =
+          "col-12 col-md-6 col-xl-4 d-flex flex-column align-items-center";
+       
+      }
+      
       //nombre en habilidades
       let tituloHab = document.createElement("h2");
       tituloHab.className = "cardt-tittle";
@@ -168,9 +184,7 @@ function createCard(json, minNom) {
 
       //Mostrando habilidades
       let habilidades = json.results[item].powerstats;
-      main.appendChild(divHab);
-      let br = document.createElement("br");
-      divEnc.appendChild(br);
+      
       let habSecc = document.createElement("h3");
       habSecc.className = "card-text";
       habSecc.id = "biografia";
@@ -264,8 +278,9 @@ function createCard(json, minNom) {
         volver.className = "fas fa-arrows-alt-h";
         eliminar.appendChild(volver);
         eliminar.addEventListener("click", () => {
-          main.removeChild(divHab);
+          divCard.removeChild(divHab);
           divHab.removeChild(eliminar);
+          
           
         });
       }
