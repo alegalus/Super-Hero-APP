@@ -161,18 +161,15 @@ function createCard(json, minNom) {
     //creando habilidades
     let divHab = document.createElement("div");
     divHab.id = "cardBack";
-    divHab.className = "d-flex flex-column align-items-center";
+    divHab.className = "d-flex flex-column justify-content-between";
     divCard.appendChild(divHab);
 
     //nombre en habilidades
     let tituloHab = document.createElement("h2");
-    tituloHab.className = "cardt-tittle";
+    tituloHab.className = "card-tittle-hab card-tittle" ;
+    tituloHab.innerHTML = name;
     divHab.appendChild(tituloHab);
-    let spanNom = document.createElement("span");
-    spanNom.className = "nombre";
-    spanNom.id = "namePlace";
-    spanNom.innerHTML = name;
-    tituloHab.appendChild(spanNom);
+    
 
     //Mostrando habilidades
     let habilidades = json.results[item].powerstats;
@@ -186,12 +183,12 @@ function createCard(json, minNom) {
     let combate = habilidades.combat;
     let parrComb = document.createElement("p");
     parrComb.className = "card-text";
-    parrComb.id = "parrafo";
+    parrComb.id = "parrafoHab";
     parrComb.textContent = "Combate: ";
     divHab.appendChild(parrComb);
     let spanComb = document.createElement("span");
     spanComb.className = "comb";
-    spanComb.id = "combate";
+    spanComb.id = "spanHab";
     spanComb.innerHTML = combate;
     parrComb.appendChild(spanComb);
 
@@ -199,60 +196,60 @@ function createCard(json, minNom) {
     let durabilidad = habilidades.durability;
     let parrDur = document.createElement("p");
     parrDur.className = "card-text";
-    parrDur.id = "parrafo";
+    parrDur.id = "parrafoHab";
     parrDur.textContent = "Durabilidad: ";
     divHab.appendChild(parrDur);
     let spanDur = document.createElement("span");
     spanDur.className = "dur";
-    spanDur.id = "durabilidad";
+    spanDur.id = "spanHab";
     spanDur.innerHTML = durabilidad;
     parrDur.appendChild(spanDur);
     //mostrando Inteligencia
     let inteligencia = habilidades.intelligence;
     let parrInt = document.createElement("p");
     parrInt.className = "card-text";
-    parrInt.id = "parrafo";
+    parrInt.id = "parrafoHab";
     parrInt.textContent = "Inteligencia: ";
     divHab.appendChild(parrInt);
     let spanInt = document.createElement("span");
     spanInt.className = "int";
-    spanInt.id = "inteligencia";
+    spanInt.id = "spanHab";
     spanInt.innerHTML = inteligencia;
     parrInt.appendChild(spanInt);
     //mostrando poder
     let poder = habilidades.power;
     let parrPod = document.createElement("p");
     parrPod.className = "card-text";
-    parrPod.id = "parrafo";
+    parrPod.id = "parrafoHab";
     parrPod.textContent = "Poder: ";
     divHab.appendChild(parrPod);
     let spanPod = document.createElement("span");
     spanPod.className = "pod";
-    spanPod.id = "poder";
+    spanPod.id = "spanHab";
     spanPod.innerHTML = poder;
     parrPod.appendChild(spanPod);
     //mostrando velocidad
     let velocidad = habilidades.speed;
     let parrVel = document.createElement("p");
     parrVel.className = "card-text";
-    parrVel.id = "parrafo";
+    parrVel.id = "parrafoHab";
     parrVel.textContent = "Velocidad: ";
     divHab.appendChild(parrVel);
     let spanVel = document.createElement("span");
     spanVel.className = "vel";
-    spanVel.id = "velocidad";
+    spanVel.id = "spanHab";
     spanVel.innerHTML = velocidad;
     parrVel.appendChild(spanVel);
     //mostrando Fuerza
     let fuerza = habilidades.strength;
     let parrFuer = document.createElement("p");
     parrFuer.className = "card-text";
-    parrFuer.id = "parrafo";
+    parrFuer.id = "parrafoHab";
     parrFuer.textContent = "Fuerza: ";
     divHab.appendChild(parrFuer);
     let spanFuer = document.createElement("span");
     spanFuer.className = "fuer";
-    spanFuer.id = "fuerza";
+    spanFuer.id = "spanHab";
     spanFuer.innerHTML = fuerza;
     parrFuer.appendChild(spanFuer);
 

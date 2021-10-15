@@ -84,15 +84,7 @@ main {
   background-size: contain;
   background-repeat: no-repeat;
 }
-/*--BACKGROUND - FAV--*/
-#fav {
-  min-height: 100vh;
-  background: url("Imagenes/flash\ black.jpg");
-  background-color: black;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
+
 /*--BUSCADOR--*/
 #contenedorPrincipalFav {
   display: none;
@@ -149,12 +141,9 @@ input:focus {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
 /*--CARD SUPER--*/
 
-
-.card.flipCard{
-
+.card.flipCard {
   transform: rotateY(180deg);
 }
 
@@ -162,13 +151,11 @@ input:focus {
   background-color: rgba(32, 32, 32, 0);
   transition: all 900ms;
   transform-style: preserve-3d;
- 
- 
 }
 
-#cardFront, #cardBack{
+#cardFront,
+#cardBack {
   backface-visibility: hidden;
-
 }
 
 #cardFront {
@@ -180,36 +167,32 @@ input:focus {
   margin-bottom: 1em;
   height: 580px;
   width: 390px;
- 
-  
-  
-  
-
 }
 
-.card-tittle{
-  margin-bottom: 1em;
-
-}
-
-#cardBack{
+#cardBack {
+  background: url("Imagenes/batmancomic.jpg");
+  background-color: rgba(0, 0, 0);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 1em;
   border-radius: 10px;
-  background-color: rgb(63, 0, 0);
-  color: white;
+  border: 1px solid rgb(99, 98, 98);
+  color: rgb(252, 252, 252);
   margin: 0 1em auto;
   margin-bottom: 1em;
   height: 580px;
   width: 390px;
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
   transform: rotateY(-180deg);
-  
-  
-
 }
-
+/*--ELEMENTOS CARD FRONT--*/
+.card-tittle {
+  margin-bottom: 1em;
+  text-align: center;
+}
 #namePlace {
   text-align: center;
 }
@@ -218,6 +201,7 @@ input:focus {
   border-radius: 18px;
   border: 1px solid rgb(153, 153, 153);
   width: 40%;
+  
 }
 
 #biografia {
@@ -226,6 +210,8 @@ input:focus {
   margin-bottom: 0.5em;
 }
 
+
+
 p {
   margin-left: 2em;
 }
@@ -233,7 +219,23 @@ span {
   font-weight: bold;
   text-decoration: none;
 }
+/*--ELEMENTOS CARD BACK--*/
+.card-tittle-hab{
 
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+#parrafoHab {
+  font-size: 1.6em;
+}
+#spanHab{
+  font-size: 1.4em;
+  
+
+}
+
+/*--BOTONES--*/
 #favDiv {
   text-align: center;
 }
@@ -283,8 +285,9 @@ span {
 
   border: solid grey 1px;
   border-radius: 10px;
-  margin: 1em;
+  margin: 1em auto;
   transition: all 0.5s;
+  align-items: center;
 }
 #buttonGirar:hover {
   transform: scale(1.08, 1.08);
@@ -295,8 +298,6 @@ span {
 #space {
   height: 4em;
 }
-
-
 
 /*--media query que utiliza bootstrap por defecto--*/
 
@@ -319,9 +320,6 @@ span {
     height: 440px;
     width: 280px;
   }
-
-
- 
 
   #namePlace {
     font-size: 1.03em;
