@@ -39,12 +39,12 @@ function createCard(json, minNom) {
   let datos = json.results;
   let padre = document.getElementById("fila");
   padre.innerHTML = "";
-
+  //recorriendo los resultados
   for (let item in datos) {
-    let main = document.createElement("div");
-    main.id = "main"
-    //creando los elementos recorriendo los resultados
     //creando cards
+    let main = document.createElement("div");
+    main.id = "main";
+
     if (datos[item].name.indexOf(minNom) !== -1) {
       main.id = "main";
     }
@@ -65,6 +65,7 @@ function createCard(json, minNom) {
     let divCard = document.createElement("div");
     divCard.id = "cardSup";
     divCard.className = "card";
+    //creando Card Front
     let divEnc = document.createElement("div");
     divEnc.id = "cardFront";
     divEnc.className = "d-flex flex-column align-items-center";
@@ -84,7 +85,7 @@ function createCard(json, minNom) {
     spanTit.id = "namePlace";
     spanTit.innerHTML = name;
     tituloEnc.appendChild(spanTit);
-    
+
     //Agregando imagen
     let imagen = datos[item].image.url;
     let imgSup = document.createElement("img");
@@ -140,150 +141,131 @@ function createCard(json, minNom) {
     spanEdit.id = "editorial";
     spanEdit.innerHTML = editorial;
     parrEdit.appendChild(spanEdit);
+
     //boton muestra de habilidades
     let divFav = document.createElement("div");
     divFav.id = "favDiv";
     divEnc.appendChild(divFav);
     let fav = document.createElement("button");
     fav.id = "buttonFav";
-   
+
     divFav.appendChild(fav);
     let star = document.createElement("i");
     star.className = "fas fa-arrows-alt-h";
     fav.appendChild(star);
 
+    //girando card para mostrar habilidades
     fav.addEventListener("click", () => {
+      divCard.classList.toggle("flipCard");
+    });
+    //creando habilidades
+    let divHab = document.createElement("div");
+    divHab.id = "cardBack";
+    divHab.className = "d-flex flex-column align-items-center";
+    divCard.appendChild(divHab);
 
-      let divHab = document.createElement("div");
-      divHab.id = "cardBack";
-      divCard.appendChild(divHab);
-      if (datos.length == 1) {
-        divHab.className =
-          "col-12 col-md-12 col-xl-12 d-flex flex-column align-items-center";
-        
-        console.log("es un solo elemento");
-      } else if (datos.length == 2) {
-        divHab.className =
-          "col-12 col-md-6 col-xl-6 d-flex flex-column align-items-center";
-        
-      } else {
-        divHab.className =
-          "col-12 col-md-6 col-xl-4 d-flex flex-column align-items-center";
-       
-      }
-      
-      //nombre en habilidades
-      let tituloHab = document.createElement("h2");
-      tituloHab.className = "cardt-tittle";
-      divHab.appendChild(tituloHab);
-      let spanNom = document.createElement("span");
-      spanNom.className = "nombre";
-      spanNom.id = "namePlace";
-      spanNom.innerHTML = name;
-      tituloHab.appendChild(spanNom);
+    //nombre en habilidades
+    let tituloHab = document.createElement("h2");
+    tituloHab.className = "cardt-tittle";
+    divHab.appendChild(tituloHab);
+    let spanNom = document.createElement("span");
+    spanNom.className = "nombre";
+    spanNom.id = "namePlace";
+    spanNom.innerHTML = name;
+    tituloHab.appendChild(spanNom);
 
-      //Mostrando habilidades
-      let habilidades = json.results[item].powerstats;
-      
-      let habSecc = document.createElement("h3");
-      habSecc.className = "card-text";
-      habSecc.id = "biografia";
-      habSecc.textContent = "Habilidades";
-      divHab.appendChild(habSecc);
-      //mostrando combate
-      let combate = habilidades.combat;
-      let parrComb = document.createElement("p");
-      parrComb.className = "card-text";
-      parrComb.id = "parrafo";
-      parrComb.textContent = "Combate: ";
-      divHab.appendChild(parrComb);
-      let spanComb = document.createElement("span");
-      spanComb.className = "comb";
-      spanComb.id = "combate";
-      spanComb.innerHTML = combate;
-      parrComb.appendChild(spanComb);
+    //Mostrando habilidades
+    let habilidades = json.results[item].powerstats;
 
-      //mostrando durabilidad
-      let durabilidad = habilidades.durability;
-      let parrDur = document.createElement("p");
-      parrDur.className = "card-text";
-      parrDur.id = "parrafo";
-      parrDur.textContent = "Durabilidad: ";
-      divHab.appendChild(parrDur);
-      let spanDur = document.createElement("span");
-      spanDur.className = "dur";
-      spanDur.id = "durabilidad";
-      spanDur.innerHTML = durabilidad;
-      parrDur.appendChild(spanDur);
-      //mostrando Inteligencia
-      let inteligencia = habilidades.intelligence;
-      let parrInt = document.createElement("p");
-      parrInt.className = "card-text";
-      parrInt.id = "parrafo";
-      parrInt.textContent = "Inteligencia: ";
-      divHab.appendChild(parrInt);
-      let spanInt = document.createElement("span");
-      spanInt.className = "int";
-      spanInt.id = "inteligencia";
-      spanInt.innerHTML = inteligencia;
-      parrInt.appendChild(spanInt);
-      //mostrando poder
-      let poder = habilidades.power;
-      let parrPod = document.createElement("p");
-      parrPod.className = "card-text";
-      parrPod.id = "parrafo";
-      parrPod.textContent = "Poder: ";
-      divHab.appendChild(parrPod);
-      let spanPod = document.createElement("span");
-      spanPod.className = "pod";
-      spanPod.id = "poder";
-      spanPod.innerHTML = poder;
-      parrPod.appendChild(spanPod);
-      //mostrando velocidad
-      let velocidad = habilidades.speed;
-      let parrVel = document.createElement("p");
-      parrVel.className = "card-text";
-      parrVel.id = "parrafo";
-      parrVel.textContent = "Velocidad: ";
-      divHab.appendChild(parrVel);
-      let spanVel = document.createElement("span");
-      spanVel.className = "vel";
-      spanVel.id = "velocidad";
-      spanVel.innerHTML = velocidad;
-      parrVel.appendChild(spanVel);
-      //mostrando Fuerza
-      let fuerza = habilidades.strength;
-      let parrFuer = document.createElement("p");
-      parrFuer.className = "card-text";
-      parrFuer.id = "parrafo";
-      parrFuer.textContent = "Fuerza: ";
-      divHab.appendChild(parrFuer);
-      let spanFuer = document.createElement("span");
-      spanFuer.className = "fuer";
-      spanFuer.id = "fuerza";
-      spanFuer.innerHTML = fuerza;
-      parrFuer.appendChild(spanFuer);
+    let habSecc = document.createElement("h3");
+    habSecc.className = "card-text";
+    habSecc.id = "biografia";
+    habSecc.textContent = "Habilidades";
+    divHab.appendChild(habSecc);
+    //mostrando combate
+    let combate = habilidades.combat;
+    let parrComb = document.createElement("p");
+    parrComb.className = "card-text";
+    parrComb.id = "parrafo";
+    parrComb.textContent = "Combate: ";
+    divHab.appendChild(parrComb);
+    let spanComb = document.createElement("span");
+    spanComb.className = "comb";
+    spanComb.id = "combate";
+    spanComb.innerHTML = combate;
+    parrComb.appendChild(spanComb);
 
-      let active = fav.classList.toggle("is-active");
+    //mostrando durabilidad
+    let durabilidad = habilidades.durability;
+    let parrDur = document.createElement("p");
+    parrDur.className = "card-text";
+    parrDur.id = "parrafo";
+    parrDur.textContent = "Durabilidad: ";
+    divHab.appendChild(parrDur);
+    let spanDur = document.createElement("span");
+    spanDur.className = "dur";
+    spanDur.id = "durabilidad";
+    spanDur.innerHTML = durabilidad;
+    parrDur.appendChild(spanDur);
+    //mostrando Inteligencia
+    let inteligencia = habilidades.intelligence;
+    let parrInt = document.createElement("p");
+    parrInt.className = "card-text";
+    parrInt.id = "parrafo";
+    parrInt.textContent = "Inteligencia: ";
+    divHab.appendChild(parrInt);
+    let spanInt = document.createElement("span");
+    spanInt.className = "int";
+    spanInt.id = "inteligencia";
+    spanInt.innerHTML = inteligencia;
+    parrInt.appendChild(spanInt);
+    //mostrando poder
+    let poder = habilidades.power;
+    let parrPod = document.createElement("p");
+    parrPod.className = "card-text";
+    parrPod.id = "parrafo";
+    parrPod.textContent = "Poder: ";
+    divHab.appendChild(parrPod);
+    let spanPod = document.createElement("span");
+    spanPod.className = "pod";
+    spanPod.id = "poder";
+    spanPod.innerHTML = poder;
+    parrPod.appendChild(spanPod);
+    //mostrando velocidad
+    let velocidad = habilidades.speed;
+    let parrVel = document.createElement("p");
+    parrVel.className = "card-text";
+    parrVel.id = "parrafo";
+    parrVel.textContent = "Velocidad: ";
+    divHab.appendChild(parrVel);
+    let spanVel = document.createElement("span");
+    spanVel.className = "vel";
+    spanVel.id = "velocidad";
+    spanVel.innerHTML = velocidad;
+    parrVel.appendChild(spanVel);
+    //mostrando Fuerza
+    let fuerza = habilidades.strength;
+    let parrFuer = document.createElement("p");
+    parrFuer.className = "card-text";
+    parrFuer.id = "parrafo";
+    parrFuer.textContent = "Fuerza: ";
+    divHab.appendChild(parrFuer);
+    let spanFuer = document.createElement("span");
+    spanFuer.className = "fuer";
+    spanFuer.id = "fuerza";
+    spanFuer.innerHTML = fuerza;
+    parrFuer.appendChild(spanFuer);
 
-      if (active === false && divHab.style.display === "none") {
-        divHab.style.display = "none";
-      } else {
-        divHab.style.display = "block";
-        
-        let eliminar = document.createElement("button");
-        eliminar.id = "buttonEliminar";
-        divHab.appendChild(eliminar)
-        let volver = document.createElement("i");
-        volver.className = "fas fa-arrows-alt-h";
-        eliminar.appendChild(volver);
-        eliminar.addEventListener("click", () => {
-          divCard.removeChild(divHab);
-          divHab.removeChild(eliminar);
-          
-          
-        });
-      }
+
+    //boton de girar card Back
+    let girar = document.createElement("button");
+    girar.id = "buttonGirar";
+    divHab.appendChild(girar);
+    let volver = document.createElement("i");
+    volver.className = "fas fa-arrows-alt-h";
+    girar.appendChild(volver);
+    girar.addEventListener("click", () => {
+      divCard.classList.toggle("flipCard");
     });
   }
 }
