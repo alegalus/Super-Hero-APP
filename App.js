@@ -174,11 +174,6 @@ function createCard(json, minNom) {
     //Mostrando habilidades
     let habilidades = json.results[item].powerstats;
 
-    let habSecc = document.createElement("h3");
-    habSecc.className = "card-text";
-    habSecc.id = "biografia";
-    habSecc.textContent = "Habilidades";
-    divHab.appendChild(habSecc);
     //mostrando combate
     let combate = habilidades.combat;
     let parrComb = document.createElement("p");

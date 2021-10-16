@@ -170,7 +170,7 @@ input:focus {
 }
 
 #cardBack {
-  background: url("Imagenes/peakpx.jpg");
+  background: url("Imagenes/batmancomic.jpg");
   background-color: rgba(0, 0, 0);
   background-position: center;
   background-size: cover;
@@ -195,6 +195,7 @@ input:focus {
 }
 #namePlace {
   text-align: center;
+  
 }
 
 #imagen {
@@ -214,6 +215,7 @@ input:focus {
 
 p {
   margin-left: 2em;
+  
 }
 span {
   font-weight: bold;
@@ -223,28 +225,31 @@ span {
 .card-tittle-hab{
 
   text-align: center;
+  font-family: 'Rampart One', cursive;
   font-size: 2em;
   font-weight: bold;
   color: #8E0E00;  
   color: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  
   color: linear-gradient(to right, #1F1C18, #8E0E00); 
 }
+
+
+
 #parrafoHab {
   font-size: 1.6em;
+  font-family: 'Rampart One', cursive;
   font-weight: bold;
-  color: #8E0E00;  
-  color: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  
-  color: linear-gradient(to right, #1F1C18, #8E0E00); 
+  color: white;
+ 
   
 
 }
 #spanHab{
   font-size: 1.4em;
   color: white;
-
-
-
-  
+  /*color: #8E0E00;  
+  color: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  
+  color: linear-gradient(to right, #1F1C18, #8E0E00); */
 
 }
 
@@ -321,12 +326,12 @@ span {
     top: 70;
   }
   #cardFront {
-    height: 440px;
+    height: 460px;
     width: 280px;
   }
 
   #cardBack {
-    height: 440px;
+    height: 460px;
     width: 280px;
   }
 
@@ -341,6 +346,14 @@ span {
   }
   span {
     font-size: 0.8em;
+  }
+  #parrafoHab{
+    font-size: 1.4em;
+  }
+  #spanHab{
+    font-size: 1.2em;
+
+
   }
   #buttonFav {
     left: 200;
@@ -358,12 +371,12 @@ span {
     top: 70;
   }
   #cardFront {
-    height: 440px;
+    height: 460px;
     width: 280px;
   }
 
   #cardBack {
-    height: 440px;
+    height: 460px;
     width: 280px;
   }
   #namePlace {
@@ -374,10 +387,19 @@ span {
   }
 
   p {
-    font-size: 0.9em;
+    font-size: 1em;
   }
   span {
-    font-size: 0.6em;
+    font-size: 0.9em;
+  }
+
+  #parrafoHab{
+    font-size: 1.4em;
+  }
+  #spanHab{
+    font-size: 1.2em;
+
+
   }
   #buttonFav {
     left: 198;
@@ -396,12 +418,12 @@ span {
   }
 
   #cardFront {
-    height: 440px;
+    height: 460px;
     width: 300px;
   }
 
   #cardBack {
-    height: 440px;
+    height: 460px;
     width: 300px;
   }
   #namePlace {
@@ -412,10 +434,10 @@ span {
   }
 
   p {
-    font-size: 0.9em;
+    font-size: 1em;
   }
   span {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
   #buttonFav {
     left: 240;
