@@ -99,16 +99,22 @@ main {
   height: 2.5em;
   margin: 3em auto;
   margin-bottom: 1em;
-  border: none;
+  border: solid 1px grey;
   border-radius: 26px;
   box-shadow: 10px 10px 30px rgb(0, 0, 0);
+  background-color: black;
   text-align: center;
   font-size: 1.2em;
   font-weight: 700;
-  color: darkcyan;
+  color: #8e0e00;
   position: relative;
 }
 
+::placeholder{
+  color: rgb(88, 72, 72);
+  font-size: 0.8em;
+  
+}
 input:focus {
   outline: none;
 }
@@ -319,6 +325,11 @@ span {
   #buscador {
     width: 100%;
   }
+  ::placeholder{
+  
+    font-size: 0.45em;
+    
+  }
 
   #cargarHeroes {
     font-size: 1.4em;
@@ -363,6 +374,12 @@ span {
 @media screen and (min-width: 375px) and (max-width: 410px) {
   #buscador {
     width: 100%;
+  }
+
+  ::placeholder{
+  
+    font-size: 0.5em;
+    
   }
 
   #cargarHeroes {
@@ -410,7 +427,11 @@ span {
   #buscador {
     width: 100%;
   }
-
+  ::placeholder{
+  
+    font-size: 0.6em;
+    
+  }
   #cargarHeroes {
     font-size: 1.4em;
     left: 290;
