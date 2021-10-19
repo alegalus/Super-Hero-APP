@@ -112,11 +112,13 @@ main {
 }
 
 ::placeholder{
-  color: rgb(88, 72, 72);
-  font-size: 0.8em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
- 
+  color: rgb(177, 174, 174);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  font-family: 'Special Elite', cursive;
+  position: relative;
+  top: -4;
+  left: 0;
   
 }
 input:focus {
@@ -161,6 +163,7 @@ input:focus {
   background-color: rgba(32, 32, 32, 0);
   transition: all 900ms;
   transform-style: preserve-3d;
+  
 }
 
 #cardFront,
@@ -328,16 +331,19 @@ span {
 @media screen and (max-width: 374px) {
   #buscador {
     width: 100%;
+    
+
   }
-  ::placeholder{
+  #buscador::placeholder{
   
-    font-size: 0.45em;
+    font-size: 0.5em;
+    top: -6;
     
   }
 
   #cargarHeroes {
     font-size: 1.4em;
-    left: 250;
+    left: 253;
     top: 70;
   }
   #cardFront {
@@ -383,6 +389,7 @@ span {
   ::placeholder{
   
     font-size: 0.5em;
+    top: -6;
     
   }
 
@@ -434,11 +441,12 @@ span {
   ::placeholder{
   
     font-size: 0.6em;
+    top: -5;
     
   }
   #cargarHeroes {
-    font-size: 1.4em;
-    left: 290;
+    font-size: 1.3em;
+    left: 295;
     top: 70;
   }
 
