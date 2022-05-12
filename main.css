@@ -328,7 +328,7 @@ span {
 
 /*--media query que utiliza bootstrap por defecto--*/
 
-@media screen and (max-width: 374px) {
+@media screen and (min-width: 340px) and (max-width: 374px) {
   #buscador {
     width: 100%;
     
@@ -381,7 +381,7 @@ span {
   }
 }
 
-@media screen and (min-width: 375px) and (max-width: 410px) {
+@media screen and (min-width: 375px) and (max-width: 399px) {
   #buscador {
     width: 100%;
   }
@@ -395,7 +395,7 @@ span {
 
   #cargarHeroes {
     font-size: 1.4em;
-    left: 260;
+    left: 268;
     top: 70;
   }
   #cardFront {
@@ -434,7 +434,7 @@ span {
   }
 }
 
-@media (min-width: 411px) and (max-width: 575px) {
+@media (min-width: 400px) and (max-width: 575px) {
   #buscador {
     width: 100%;
   }
@@ -480,10 +480,9 @@ span {
     height: 6%;
   }
 }
-@media (min-width: 576px) {
-}
 
-@media screen and (min-width: 760px) {
+
+@media screen and (min-width: 760px) and (max-width:840px) {
   #buscador {
     width: 100%;
   }
@@ -511,14 +510,14 @@ span {
   }
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 900px) and (max-width:1030px) {
   #datos {
     font-size: 1.3em;
   }
 
   #cargarHeroes {
     font-size: 1.4em;
-    left: 770;
+    left: 660;
     top: 70;
   }
   #cardFront {
@@ -535,16 +534,33 @@ span {
     left: 210;
   }
 }
-
-@media screen and (min-width: 1200px) and (max-width: 1379px) {
+@media screen and (min-width: 1380px) and (max-width: 1919px) {
   #buscador {
-    width: 80%;
+    width: 60%;
+    height: 3em;
   }
 
   #cargarHeroes {
-    font-size: 1.4em;
-    left: 958;
+    left: 990px;
     top: 72;
+    font-size: 1.8em;
+  }
+  #card6 {
+    height: 560px;
+  }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 1980px) {
+  #buscador {
+    width: 40%;
+    height: 3em;
+  }
+
+  #cargarHeroes {
+    font-size: 1.8em;
+    left:1100;
+    top: 72;
+
   }
   #cardFront {
     height: 550px;
@@ -556,19 +572,5 @@ span {
     width: 360px;
   }
 }
-
-@media screen and (min-width: 1380px) and (max-width: 1920px) {
-  #buscador {
-    width: 60%;
-    height: 3em;
-  }
-
-  #cargarHeroes {
-    left: 990;
-    top: 72;
-    font-size: 1.8em;
-  }
-  #card6 {
-    height: 560px;
-  }
-}
+ 
+ 

@@ -65,6 +65,8 @@ function createCard(json, minNom) {
     let divCard = document.createElement("div");
     divCard.id = "cardSup";
     divCard.className = "card";
+    padre.appendChild(main); // con esto le doy de quien es hijo cada uno, este va a uno el div card con el div flex
+    main.appendChild(divCard);
     //creando Card Front
     let divEnc = document.createElement("div");
     divEnc.id = "cardFront";
@@ -72,8 +74,7 @@ function createCard(json, minNom) {
     let tituloEnc = document.createElement("h2");
     tituloEnc.className = "card-tittle";
 
-    padre.appendChild(main); // con esto le doy de quien es hijo cada uno, este va a uno el div card con el div flex
-    main.appendChild(divCard);
+    
     divCard.appendChild(divEnc);
     divEnc.appendChild(tituloEnc);
 
