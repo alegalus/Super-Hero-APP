@@ -2,6 +2,8 @@
 
 Es una aplicacion que use de practica, como por ejemplo traer distintos datos de una API compleja, poder recorrerla para mostrar si para una busqueda tiene muchos resultados. Lo que hace es traer datos sobre distintos super heroes, principalmente los publicados por las editoriales DC y Marvel Comics. Esto lo hice utilizando la Super Hero API  (https://superheroapi.com/). Esta App se realizo con HTML, CSS, Bootstrap y JS.
 
+Link de la aplicacion: https://alegalus.github.io/Super-Hero-APP/
+
 Vista de la App, con un diseño responsive, que se adapta a distintas pantallas.
 
 ![Vista1](https://user-images.githubusercontent.com/68312629/134755454-a0ebbb34-88db-42e4-9ba2-b6e1e8c88de9.png)
